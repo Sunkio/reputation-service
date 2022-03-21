@@ -6,6 +6,7 @@ import {
     hasJoinedAGroup as _hasJoinedAGroup,
     hasIdentityCommitment as _hasIdentityCommitment,
     getGroup as _getGroup,
+    getGroups as _getGroups,
     sendEmail as _sendEmail
 } from "src/utils/frontend/api"
 
@@ -14,6 +15,7 @@ type ReturnParameters = {
     removeIdentityCommitment: typeof _removeIdentityCommitment
     hasIdentityCommitment: typeof _hasIdentityCommitment
     getGroup: typeof _getGroup
+    getGroups: typeof _getGroups
     hasJoinedAGroup: typeof _hasJoinedAGroup
     sendEmail: typeof _sendEmail
 }
@@ -62,6 +64,7 @@ export default function useInterepAPI(): ReturnParameters {
         removeIdentityCommitment: (parameters) => handleApiFunction(_removeIdentityCommitment, parameters),
         hasIdentityCommitment: (parameters) => handleApiFunction(_hasIdentityCommitment, parameters),
         getGroup: (parameters) => handleApiFunction(_getGroup, parameters),
+        getGroups: () => handleApiFunction(_getGroups),
         hasJoinedAGroup: () => handleApiFunction(_hasJoinedAGroup),
         sendEmail: (parameters) => handleApiFunction(_sendEmail, parameters)
     }
